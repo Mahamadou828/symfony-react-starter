@@ -1,0 +1,31 @@
+{
+  "name": "aoac",
+  "version": "1.0.0",
+  "description": "Projet de Chardie pour la creation d'une web app de gestion ",
+  "main": "index.js",
+  "scripts": {
+    "start": "concurrently --kill-others \"npm run sass:watch\" \"npm run dev\"",
+    "build": "npm run sass:build && encore production",
+    "test": "jest --watch",
+    "dev": "encore dev --watch",
+    "sass:build": "sass ./FrontEnd/sass/index.scss:./public/style/index.css --style compressed",
+    "sass:watch": "sass --watch ./FrontEnd/sass/index.scss:./public/style/index.css",
+    "prefix": "postcss ./public/build/style/index.css --use autoprefixer"
+  },
+  "author": "@Mahamadou Samake",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.19.0",
+    "babel-preset-react": "^6.24.1",
+    "concurrently": "^5.3.0",
+    "enzyme-adapter-react-16": "^1.15.5",
+    "jest": "^26.4.2",
+    "jest-enzyme": "^7.1.2",
+    "prop-types": "^15.7.2"
+  }
+}
